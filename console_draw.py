@@ -58,11 +58,11 @@ class console_painter:
 print(len(sys.argv))
 img_arg = ''
 if len(sys.argv) > 1:
-    im = img_processing.image_stuff(sys.argv[1]) 
+    img_arg = sys.argv[1]
 else:
-    img_arg = ''
+    img_arg = input('enter image path: ')
 
-im = img_processing.image_stuff(path=img_arg)
+im = img_processing.image_coords(path=img_arg)
 c = console_painter(im.get_width(),im.get_height())
 c.create_window()
 c.clean()
